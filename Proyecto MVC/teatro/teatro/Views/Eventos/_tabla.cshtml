@@ -1,0 +1,27 @@
+﻿@model List<teatro.Models.EventoDto>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Obra</th>
+            <th>Fecha</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int eventoId = 0;}
+        @foreach (var evento in Model)
+        {
+            eventoId = evento.Id;
+            <tr>
+                <td>@evento.Obra</td>
+                <td>@evento.Dia.ToShortDateString()</td>
+                <td>
+                    @Html.ActionLink("Detalles", "Details", new { id = evento.Id })
+                    @Html.ActionLink("Editar", "Edit", new { id = evento.Id })
+                    @Html.ActionLink("Eliminar", "Delete", new { id = evento.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

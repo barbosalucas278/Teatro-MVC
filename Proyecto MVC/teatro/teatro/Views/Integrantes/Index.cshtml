@@ -1,0 +1,13 @@
+﻿@model teatro.Models.ViewModels.IntegranteViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Crear nuevo integrante", "Create")
+</p>
+
+@Html.Partial("_tabla", Model.ListaIntegrantes)

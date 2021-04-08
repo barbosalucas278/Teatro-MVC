@@ -1,0 +1,413 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TeatroModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Evento">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrquestaId" Type="int" Nullable="false" />
+          <Property Name="Obra" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Dia" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Instrumento">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Integrante">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Apellido" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Edad" Type="int" Nullable="false" />
+          <Property Name="Telefono" Type="int" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="Dni" Type="nvarchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="IntegranteInstrumentoPuestoEvento">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EventoId" Type="int" Nullable="false" />
+          <Property Name="PuestoId" Type="int" Nullable="false" />
+          <Property Name="IntegranteId" Type="int" Nullable="false" />
+          <Property Name="InstrumentoId" Type="int" Nullable="false" />
+          <Property Name="FechaInscripcion" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="FechaBaja" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Orquesta">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Localidad" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Puesto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Evento_Orquesta">
+          <End Role="Orquesta" Type="Self.Orquesta" Multiplicity="1" />
+          <End Role="Evento" Type="Self.Evento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orquesta">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Evento">
+              <PropertyRef Name="OrquestaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IntegranteInstrumentoPuestoEvento_Evento">
+          <End Role="Evento" Type="Self.Evento" Multiplicity="1" />
+          <End Role="IntegranteInstrumentoPuestoEvento" Type="Self.IntegranteInstrumentoPuestoEvento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Evento">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="IntegranteInstrumentoPuestoEvento">
+              <PropertyRef Name="EventoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IntegranteInstrumentoPuestoEvento_Instrumento">
+          <End Role="Instrumento" Type="Self.Instrumento" Multiplicity="1" />
+          <End Role="IntegranteInstrumentoPuestoEvento" Type="Self.IntegranteInstrumentoPuestoEvento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Instrumento">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="IntegranteInstrumentoPuestoEvento">
+              <PropertyRef Name="InstrumentoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IntegranteInstrumentoPuestoEvento_Integrante">
+          <End Role="Integrante" Type="Self.Integrante" Multiplicity="1" />
+          <End Role="IntegranteInstrumentoPuestoEvento" Type="Self.IntegranteInstrumentoPuestoEvento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Integrante">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="IntegranteInstrumentoPuestoEvento">
+              <PropertyRef Name="IntegranteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IntegranteInstrumentoPuestoEvento_Puesto">
+          <End Role="Puesto" Type="Self.Puesto" Multiplicity="1" />
+          <End Role="IntegranteInstrumentoPuestoEvento" Type="Self.IntegranteInstrumentoPuestoEvento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Puesto">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="IntegranteInstrumentoPuestoEvento">
+              <PropertyRef Name="PuestoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TeatroModelStoreContainer">
+          <EntitySet Name="Evento" EntityType="Self.Evento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Instrumento" EntityType="Self.Instrumento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Integrante" EntityType="Self.Integrante" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IntegranteInstrumentoPuestoEvento" EntityType="Self.IntegranteInstrumentoPuestoEvento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orquesta" EntityType="Self.Orquesta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Puesto" EntityType="Self.Puesto" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Evento_Orquesta" Association="Self.FK_Evento_Orquesta">
+            <End Role="Orquesta" EntitySet="Orquesta" />
+            <End Role="Evento" EntitySet="Evento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IntegranteInstrumentoPuestoEvento_Evento" Association="Self.FK_IntegranteInstrumentoPuestoEvento_Evento">
+            <End Role="Evento" EntitySet="Evento" />
+            <End Role="IntegranteInstrumentoPuestoEvento" EntitySet="IntegranteInstrumentoPuestoEvento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IntegranteInstrumentoPuestoEvento_Instrumento" Association="Self.FK_IntegranteInstrumentoPuestoEvento_Instrumento">
+            <End Role="Instrumento" EntitySet="Instrumento" />
+            <End Role="IntegranteInstrumentoPuestoEvento" EntitySet="IntegranteInstrumentoPuestoEvento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IntegranteInstrumentoPuestoEvento_Integrante" Association="Self.FK_IntegranteInstrumentoPuestoEvento_Integrante">
+            <End Role="Integrante" EntitySet="Integrante" />
+            <End Role="IntegranteInstrumentoPuestoEvento" EntitySet="IntegranteInstrumentoPuestoEvento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IntegranteInstrumentoPuestoEvento_Puesto" Association="Self.FK_IntegranteInstrumentoPuestoEvento_Puesto">
+            <End Role="Puesto" EntitySet="Puesto" />
+            <End Role="IntegranteInstrumentoPuestoEvento" EntitySet="IntegranteInstrumentoPuestoEvento" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TeatroModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Teatro" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Evento" EntityType="TeatroModel.Evento" />
+          <EntitySet Name="Instrumento" EntityType="TeatroModel.Instrumento" />
+          <EntitySet Name="Integrante" EntityType="TeatroModel.Integrante" />
+          <EntitySet Name="IntegranteInstrumentoPuestoEvento" EntityType="TeatroModel.IntegranteInstrumentoPuestoEvento" />
+          <EntitySet Name="Orquesta" EntityType="TeatroModel.Orquesta" />
+          <EntitySet Name="Puesto" EntityType="TeatroModel.Puesto" />
+          <AssociationSet Name="FK_Evento_Orquesta" Association="TeatroModel.FK_Evento_Orquesta">
+            <End Role="Orquesta" EntitySet="Orquesta" />
+            <End Role="Evento" EntitySet="Evento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IntegranteInstrumentoPuestoEvento_Evento" Association="TeatroModel.FK_IntegranteInstrumentoPuestoEvento_Evento">
+            <End Role="Evento" EntitySet="Evento" />
+            <End Role="IntegranteInstrumentoPuestoEvento" EntitySet="IntegranteInstrumentoPuestoEvento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IntegranteInstrumentoPuestoEvento_Instrumento" Association="TeatroModel.FK_IntegranteInstrumentoPuestoEvento_Instrumento">
+            <End Role="Instrumento" EntitySet="Instrumento" />
+            <End Role="IntegranteInstrumentoPuestoEvento" EntitySet="IntegranteInstrumentoPuestoEvento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IntegranteInstrumentoPuestoEvento_Integrante" Association="TeatroModel.FK_IntegranteInstrumentoPuestoEvento_Integrante">
+            <End Role="Integrante" EntitySet="Integrante" />
+            <End Role="IntegranteInstrumentoPuestoEvento" EntitySet="IntegranteInstrumentoPuestoEvento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IntegranteInstrumentoPuestoEvento_Puesto" Association="TeatroModel.FK_IntegranteInstrumentoPuestoEvento_Puesto">
+            <End Role="Puesto" EntitySet="Puesto" />
+            <End Role="IntegranteInstrumentoPuestoEvento" EntitySet="IntegranteInstrumentoPuestoEvento" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Evento">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrquestaId" Type="Int32" Nullable="false" />
+          <Property Name="Obra" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Dia" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Orquesta" Relationship="TeatroModel.FK_Evento_Orquesta" FromRole="Evento" ToRole="Orquesta" />
+          <NavigationProperty Name="IntegranteInstrumentoPuestoEvento" Relationship="TeatroModel.FK_IntegranteInstrumentoPuestoEvento_Evento" FromRole="Evento" ToRole="IntegranteInstrumentoPuestoEvento" />
+        </EntityType>
+        <EntityType Name="Instrumento">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="IntegranteInstrumentoPuestoEvento" Relationship="TeatroModel.FK_IntegranteInstrumentoPuestoEvento_Instrumento" FromRole="Instrumento" ToRole="IntegranteInstrumentoPuestoEvento" />
+        </EntityType>
+        <EntityType Name="Integrante">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Apellido" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Edad" Type="Int32" Nullable="false" />
+          <Property Name="Telefono" Type="Int32" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="Dni" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="IntegranteInstrumentoPuestoEvento" Relationship="TeatroModel.FK_IntegranteInstrumentoPuestoEvento_Integrante" FromRole="Integrante" ToRole="IntegranteInstrumentoPuestoEvento" />
+        </EntityType>
+        <EntityType Name="IntegranteInstrumentoPuestoEvento">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EventoId" Type="Int32" Nullable="false" />
+          <Property Name="PuestoId" Type="Int32" Nullable="false" />
+          <Property Name="IntegranteId" Type="Int32" Nullable="false" />
+          <Property Name="InstrumentoId" Type="Int32" Nullable="false" />
+          <Property Name="FechaInscripcion" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="FechaBaja" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Evento" Relationship="TeatroModel.FK_IntegranteInstrumentoPuestoEvento_Evento" FromRole="IntegranteInstrumentoPuestoEvento" ToRole="Evento" />
+          <NavigationProperty Name="Instrumento" Relationship="TeatroModel.FK_IntegranteInstrumentoPuestoEvento_Instrumento" FromRole="IntegranteInstrumentoPuestoEvento" ToRole="Instrumento" />
+          <NavigationProperty Name="Integrante" Relationship="TeatroModel.FK_IntegranteInstrumentoPuestoEvento_Integrante" FromRole="IntegranteInstrumentoPuestoEvento" ToRole="Integrante" />
+          <NavigationProperty Name="Puesto" Relationship="TeatroModel.FK_IntegranteInstrumentoPuestoEvento_Puesto" FromRole="IntegranteInstrumentoPuestoEvento" ToRole="Puesto" />
+        </EntityType>
+        <EntityType Name="Orquesta">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Localidad" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Evento" Relationship="TeatroModel.FK_Evento_Orquesta" FromRole="Orquesta" ToRole="Evento" />
+        </EntityType>
+        <EntityType Name="Puesto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="IntegranteInstrumentoPuestoEvento" Relationship="TeatroModel.FK_IntegranteInstrumentoPuestoEvento_Puesto" FromRole="Puesto" ToRole="IntegranteInstrumentoPuestoEvento" />
+        </EntityType>
+        <Association Name="FK_Evento_Orquesta">
+          <End Type="TeatroModel.Orquesta" Role="Orquesta" Multiplicity="1" />
+          <End Type="TeatroModel.Evento" Role="Evento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orquesta">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Evento">
+              <PropertyRef Name="OrquestaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IntegranteInstrumentoPuestoEvento_Evento">
+          <End Type="TeatroModel.Evento" Role="Evento" Multiplicity="1" />
+          <End Type="TeatroModel.IntegranteInstrumentoPuestoEvento" Role="IntegranteInstrumentoPuestoEvento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Evento">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="IntegranteInstrumentoPuestoEvento">
+              <PropertyRef Name="EventoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IntegranteInstrumentoPuestoEvento_Instrumento">
+          <End Type="TeatroModel.Instrumento" Role="Instrumento" Multiplicity="1" />
+          <End Type="TeatroModel.IntegranteInstrumentoPuestoEvento" Role="IntegranteInstrumentoPuestoEvento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Instrumento">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="IntegranteInstrumentoPuestoEvento">
+              <PropertyRef Name="InstrumentoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IntegranteInstrumentoPuestoEvento_Integrante">
+          <End Type="TeatroModel.Integrante" Role="Integrante" Multiplicity="1" />
+          <End Type="TeatroModel.IntegranteInstrumentoPuestoEvento" Role="IntegranteInstrumentoPuestoEvento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Integrante">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="IntegranteInstrumentoPuestoEvento">
+              <PropertyRef Name="IntegranteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IntegranteInstrumentoPuestoEvento_Puesto">
+          <End Type="TeatroModel.Puesto" Role="Puesto" Multiplicity="1" />
+          <End Type="TeatroModel.IntegranteInstrumentoPuestoEvento" Role="IntegranteInstrumentoPuestoEvento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Puesto">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="IntegranteInstrumentoPuestoEvento">
+              <PropertyRef Name="PuestoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TeatroModelStoreContainer" CdmEntityContainer="Teatro">
+          <EntitySetMapping Name="Evento">
+            <EntityTypeMapping TypeName="TeatroModel.Evento">
+              <MappingFragment StoreEntitySet="Evento">
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Dia" ColumnName="Dia" />
+                <ScalarProperty Name="Obra" ColumnName="Obra" />
+                <ScalarProperty Name="OrquestaId" ColumnName="OrquestaId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Instrumento">
+            <EntityTypeMapping TypeName="TeatroModel.Instrumento">
+              <MappingFragment StoreEntitySet="Instrumento">
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Integrante">
+            <EntityTypeMapping TypeName="TeatroModel.Integrante">
+              <MappingFragment StoreEntitySet="Integrante">
+                <ScalarProperty Name="Dni" ColumnName="Dni" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Edad" ColumnName="Edad" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IntegranteInstrumentoPuestoEvento">
+            <EntityTypeMapping TypeName="TeatroModel.IntegranteInstrumentoPuestoEvento">
+              <MappingFragment StoreEntitySet="IntegranteInstrumentoPuestoEvento">
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="FechaBaja" ColumnName="FechaBaja" />
+                <ScalarProperty Name="FechaInscripcion" ColumnName="FechaInscripcion" />
+                <ScalarProperty Name="InstrumentoId" ColumnName="InstrumentoId" />
+                <ScalarProperty Name="IntegranteId" ColumnName="IntegranteId" />
+                <ScalarProperty Name="PuestoId" ColumnName="PuestoId" />
+                <ScalarProperty Name="EventoId" ColumnName="EventoId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orquesta">
+            <EntityTypeMapping TypeName="TeatroModel.Orquesta">
+              <MappingFragment StoreEntitySet="Orquesta">
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Localidad" ColumnName="Localidad" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Puesto">
+            <EntityTypeMapping TypeName="TeatroModel.Puesto">
+              <MappingFragment StoreEntitySet="Puesto">
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

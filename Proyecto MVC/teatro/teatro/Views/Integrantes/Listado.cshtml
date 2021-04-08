@@ -1,0 +1,81 @@
+﻿
+<h2>Listado de integrantes</h2>
+<button type="button" class="btn btn-success" id="btnCrear">Crear</button>
+<button type="button" class="btn btn-default" id="btnListar">Listar</button>
+<table class="table" id="tablaIntegrantes">
+    <thead>
+        <tr>
+            <td>Nombre</td>
+            <td>Apellido</td>
+            <td>Edad</td>
+            <td>Telefono</td>
+            <td>Dni</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<!--MODAL DE CREACION Y MODIFICACION DE INTEGRANTES-->
+<div id="modalIntegrante" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <input type="hidden" id="integranteId" />
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                <form id="modalForm">
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" name="nombre" class="form-control validate" id="nombre" placeholder="Ingrese el nombre" minlength="2" maxlength="150" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apellido">Apellido</label>
+                        <input type="text" name="apellido" class="form-control validate" id="apellido" placeholder="Ingrese el apellido" minlength="2" maxlength="150" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edad">Edad</label>
+                        <input type="number" name="edad" class="form-control validate" id="edad" placeholder="Ingrese la edad" minlength="1" maxlength="3" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" name="telefono" class="form-control validate" id="telefono" placeholder="Código de área sin el 0" minlength="10" maxlength="10">
+                    </div>
+                    <div class="form-group">
+                        <label for="dni">Dni</label>
+                        <input type="text" name="dni" class="form-control validate" id="dni" placeholder="Ingrese el dni" minlength="8" maxlength="9" required>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary" id="btnGuardar">Guardar</button>
+                    </div>
+                </form>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!--MODAL DE ELIMINACION DE INTEGRANTES-->
+    <div id="modalDelete" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+                    <p>¿Desea eliminar el integrante definitivamente?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger" id="btnBorrar">Borrar</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    @section scripts {
+        @Scripts.Render("~/bundles/listado")
+        @Scripts.Render("~/bundles/validacion-integrante")
+    }

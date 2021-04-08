@@ -1,0 +1,63 @@
+﻿@model teatro.Models.ViewModels.EventoViewModel
+
+<button type="button" class="btn btn-primary btnDetalles" data-toggle="modal" data-target=".fade bs-example-modal-lg">
+    modal
+</button>
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div>
+                <div class="modal-header">
+
+                    <h4 class="text-center">Evento</h4>
+                </div>
+                <div class="modal-body">
+
+                    <dl>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Evento.Obra)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Evento.Obra)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Evento.Dia)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Evento.Dia)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Evento.Orquesta.Nombre)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Evento.Orquesta.Nombre)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Evento.Orquesta.Localidad)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Evento.Orquesta.Localidad)
+                        </dd>
+                    </dl>
+                </div>
+                <div class="modal-footer">
+
+                    @Html.ActionLink("Volver", "Index")
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+@section scripts {
+    @Scripts.Render("~/bundles/detallesModal")
+}
+
+
+

@@ -1,0 +1,51 @@
+﻿@model teatro.Models.ViewModels.EventoViewModel
+
+<h3>¿Estas seguro que querés eliminar este evento?</h3>
+<div>
+    <h4>EventoDto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Evento.Obra)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Evento.Obra)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Evento.Orquesta.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Evento.Orquesta.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Evento.Orquesta.Localidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Evento.Orquesta.Localidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Evento.Dia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Evento.Dia)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Volver atrás", "Index")
+        </div>
+    }
+</div>

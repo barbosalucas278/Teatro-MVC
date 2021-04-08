@@ -1,0 +1,13 @@
+﻿@model teatro.Models.ViewModels.EventoViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>EventoIndex</h2>
+
+<p>
+    @Html.ActionLink("Crear nuevo evento", "Create")
+</p>
+
+@Html.Partial("_tabla", Model.ListaEventos)
