@@ -48,8 +48,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dominio\ContextConfig\EntidadBaseConfig.cs" />
-    <Compile Include="Dominio\EntidadBase.cs" />
+    <Compile Include="Modelos\Dominio\ContextConfig\EntidadBaseConfig.cs" />
+    <Compile Include="Modelos\Dominio\ContextConfig\IntegranteConfig.cs" />
+    <Compile Include="Modelos\Dominio\EntidadBase.cs" />
+    <Compile Include="Modelos\Dominio\Integrante.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

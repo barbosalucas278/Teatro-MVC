@@ -1,0 +1,14 @@
+C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Repositorios\bin\Debug\Repositorios.dll.config
+C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Repositorios\bin\Debug\Repositorios.dll
+C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Repositorios\bin\Debug\Repositorios.pdb
+C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Repositorios\bin\Debug\EntityFramework.dll
+C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Repositorios\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Repositorios\bin\Debug\EntityFramework.xml
+C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Repositorios\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Repositorios\bin\Debug\es\EntityFramework.resources.dll
+C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Repositorios\bin\Debug\es\EntityFramework.SqlServer.resources.dll
+C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Repositorios\obj\Debug\Repositorios.csprojAssemblyReference.cache
+C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Repositorios\obj\Debug\Repositorios.csproj.CoreCompileInputs.cache
+C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Repositorios\obj\Debug\Repositorios.csproj.CopyComplete
+C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Repositorios\obj\Debug\Repositorios.dll
+C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Repositorios\obj\Debug\Repositorios.pdb
