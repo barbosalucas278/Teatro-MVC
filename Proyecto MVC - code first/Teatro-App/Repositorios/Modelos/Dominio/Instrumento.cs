@@ -6,17 +6,13 @@ using System.Threading.Tasks;
 
 namespace Repositorios.Modelos.Dominio
 {
-    public class Integrante : EntidadBase
+    public class Instrumento : EntidadBase
     {
-        public Integrante()
+        public Instrumento()
         {
             IntegranteInstrumentoPuestoEventos = new HashSet<IntegranteInstrumentoPuestoEvento>();
         }
         public string Nombre { get; set; }
-        public string Apellido { get; set; }
-        public int Edad { get; set; }
-        public string Telefono { get; set; }
-        public string Dni { get; set; }
         public virtual ICollection<IntegranteInstrumentoPuestoEvento> IntegranteInstrumentoPuestoEventos { get; set; }
     }
 }

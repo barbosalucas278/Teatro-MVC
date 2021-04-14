@@ -49,9 +49,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Modelos\Dominio\ContextConfig\EntidadBaseConfig.cs" />
+    <Compile Include="Modelos\Dominio\ContextConfig\EventoConfig.cs" />
+    <Compile Include="Modelos\Dominio\ContextConfig\InstrumentoConfig.cs" />
     <Compile Include="Modelos\Dominio\ContextConfig\IntegranteConfig.cs" />
+    <Compile Include="Modelos\Dominio\ContextConfig\IntegranteInstrumentoPuestoEventoConfig.cs" />
+    <Compile Include="Modelos\Dominio\ContextConfig\OrquestaConfig.cs" />
+    <Compile Include="Modelos\Dominio\ContextConfig\PuestoConfig.cs" />
     <Compile Include="Modelos\Dominio\EntidadBase.cs" />
+    <Compile Include="Modelos\Dominio\Evento.cs" />
+    <Compile Include="Modelos\Dominio\Instrumento.cs" />
     <Compile Include="Modelos\Dominio\Integrante.cs" />
+    <Compile Include="Modelos\Dominio\IntegranteInstrumentoPuestoEvento.cs" />
+    <Compile Include="Modelos\Dominio\Orquesta.cs" />
+    <Compile Include="Modelos\Dominio\Puesto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
