@@ -7,7 +7,6 @@ C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Rep
 C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Repositorios\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Repositorios\bin\Debug\es\EntityFramework.resources.dll
 C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Repositorios\bin\Debug\es\EntityFramework.SqlServer.resources.dll
-C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Repositorios\obj\Debug\Repositorios.csprojAssemblyReference.cache
 C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Repositorios\obj\Debug\Repositorios.csproj.CoreCompileInputs.cache
 C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Repositorios\obj\Debug\Repositorios.csproj.CopyComplete
 C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Repositorios\obj\Debug\Repositorios.dll
