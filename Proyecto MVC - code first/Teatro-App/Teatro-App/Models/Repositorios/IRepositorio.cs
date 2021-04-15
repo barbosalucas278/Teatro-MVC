@@ -12,5 +12,6 @@ namespace Teatro_App
         Task<List<TEntity>> GetAll();
         Task<List<TEntity>> Find(Expression<Func<TEntity,bool>> predicate);
         void Add(TEntity entidad, string usuario);
+        void Remove(TEntity entidad, string usuario);
     }
 }

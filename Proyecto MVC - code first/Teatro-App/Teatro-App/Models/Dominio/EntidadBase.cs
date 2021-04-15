@@ -16,8 +16,8 @@ namespace Teatro_App
         }
         public int Id { get; set; }
         public DateTime FechaCreacion { get; set; }
-        public DateTime FechaBaja { get; set; }
-        public DateTime FechaModificacion { get; set; }
+        public DateTime? FechaBaja { get; set; }
+        public DateTime? FechaModificacion { get; set; }
         public string UsuarioModificacion { get; set; }
         public bool Activo { get; set; }
         public bool MarcaUso { get; set; }

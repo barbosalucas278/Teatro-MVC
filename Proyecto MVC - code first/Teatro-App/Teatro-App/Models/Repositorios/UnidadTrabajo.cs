@@ -4,20 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-    namespace Teatro_App
+namespace Teatro_App
 {
-        public class UnidadTrabajo : IUnidadTrabajo
+    public class UnidadTrabajo : IUnidadTrabajo
+    {
+        private readonly ContextConfig _Contexto;
+        public Repositorio<Integrante> Integrantes { get; private set; }
+        public UnidadTrabajo()
         {
-            private readonly ContextConfig Context;
-            public Task<int> Complete()
-            {
-                throw new NotImplementedException();
-            }
+            _Contexto = new ContextConfig();
+            Integrantes = new Repositorio<Integrante>(_Contexto);
+        }
+        public Task<int> Complete()
+        {
+            return _Contexto.SaveChangesAsync();
+        }
 
-            public void Dispose()
-            {
-                throw new NotImplementedException();
-            }
+        public void Dispose()
+        {
+            _Contexto.Dispose();
         }
     }
+}
 
