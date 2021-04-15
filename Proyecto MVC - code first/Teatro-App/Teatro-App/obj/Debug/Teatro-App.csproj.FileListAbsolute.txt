@@ -129,13 +129,9 @@ C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Tea
 C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Teatro-App\bin\es\Microsoft.Owin.Security.Google.resources.dll
 C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Teatro-App\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
 C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Teatro-App\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
-C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Teatro-App\obj\Debug\Teatro-App.csprojAssemblyReference.cache
 C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Teatro-App\obj\Debug\Teatro-App.csproj.CoreCompileInputs.cache
 C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Teatro-App\obj\Debug\Teatro-App.csproj.CopyComplete
 C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Teatro-App\obj\Debug\Teatro-App.dll
 C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Teatro-App\obj\Debug\Teatro-App.pdb
-C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Teatro-App\bin\Repositorios.dll
-C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Teatro-App\bin\Repositorios.pdb
-C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Teatro-App\bin\Repositorios.dll.config
 C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Teatro-App\obj\Debug\Teatro_App.Migrations.CreacionTablas.resources
 C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Teatro-App\obj\Debug\Teatro-App.csproj.GenerateResource.cache

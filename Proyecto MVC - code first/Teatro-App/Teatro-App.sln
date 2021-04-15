@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teatro-App", "Teatro-App\Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teatro-App.Tests", "Teatro-App.Tests\Teatro-App.Tests.csproj", "{4403B083-7E4C-4FC8-A392-CDEF3EA40FB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositorios", "Repositorios\Repositorios.csproj", "{6ACDE27B-9F7F-4359-86BE-980E1ABEED65}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{4403B083-7E4C-4FC8-A392-CDEF3EA40FB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4403B083-7E4C-4FC8-A392-CDEF3EA40FB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4403B083-7E4C-4FC8-A392-CDEF3EA40FB0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6ACDE27B-9F7F-4359-86BE-980E1ABEED65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6ACDE27B-9F7F-4359-86BE-980E1ABEED65}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6ACDE27B-9F7F-4359-86BE-980E1ABEED65}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6ACDE27B-9F7F-4359-86BE-980E1ABEED65}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

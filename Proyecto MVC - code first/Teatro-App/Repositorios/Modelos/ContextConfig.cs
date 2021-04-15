@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Repositorios.Modelos.Dominio;
+using Repositorios.Modelos.Dominio.ContextConfig;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
@@ -6,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Teatro_App
+namespace Repositorios.Modelos
 {
     public class ContextConfig : DbContext
     {

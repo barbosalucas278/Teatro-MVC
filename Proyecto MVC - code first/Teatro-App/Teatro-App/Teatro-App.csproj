@@ -186,15 +186,33 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202104141652222_CreacionTablas.cs" />
-    <Compile Include="Migrations\202104141652222_CreacionTablas.Designer.cs">
-      <DependentUpon>202104141652222_CreacionTablas.cs</DependentUpon>
+    <Compile Include="Migrations\202104150510329_CreacionTablas.cs" />
+    <Compile Include="Migrations\202104150510329_CreacionTablas.Designer.cs">
+      <DependentUpon>202104150510329_CreacionTablas.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ContextConfig.cs" />
+    <Compile Include="Models\Dominio\ContextConfig\EntidadBaseConfig.cs" />
+    <Compile Include="Models\Dominio\ContextConfig\EventoConfig.cs" />
+    <Compile Include="Models\Dominio\ContextConfig\InstrumentoConfig.cs" />
+    <Compile Include="Models\Dominio\ContextConfig\IntegranteConfig.cs" />
+    <Compile Include="Models\Dominio\ContextConfig\IntegranteInstrumentoPuestoEventoConfig.cs" />
+    <Compile Include="Models\Dominio\ContextConfig\OrquestaConfig.cs" />
+    <Compile Include="Models\Dominio\ContextConfig\PuestoConfig.cs" />
+    <Compile Include="Models\Dominio\EntidadBase.cs" />
+    <Compile Include="Models\Dominio\Evento.cs" />
+    <Compile Include="Models\Dominio\Instrumento.cs" />
+    <Compile Include="Models\Dominio\Integrante.cs" />
+    <Compile Include="Models\Dominio\IntegranteInstrumentoPuestoEvento.cs" />
+    <Compile Include="Models\Dominio\Orquesta.cs" />
+    <Compile Include="Models\Dominio\Puesto.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Repositorios\IRepositorio.cs" />
+    <Compile Include="Models\Repositorios\IUnidadTrabajo.cs" />
+    <Compile Include="Models\Repositorios\Repositorio.cs" />
+    <Compile Include="Models\Repositorios\UnidadTrabajo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -275,14 +293,8 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Repositorios\Repositorios.csproj">
-      <Project>{6acde27b-9f7f-4359-86be-980e1abeed65}</Project>
-      <Name>Repositorios</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202104141652222_CreacionTablas.resx">
-      <DependentUpon>202104141652222_CreacionTablas.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202104150510329_CreacionTablas.resx">
+      <DependentUpon>202104150510329_CreacionTablas.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

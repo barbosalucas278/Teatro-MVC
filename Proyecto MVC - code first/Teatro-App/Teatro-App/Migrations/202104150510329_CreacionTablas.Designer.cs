@@ -13,7 +13,7 @@ namespace Teatro_App.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202104141652222_CreacionTablas"; }
+            get { return "202104150510329_CreacionTablas"; }
         }
         
         string IMigrationMetadata.Source

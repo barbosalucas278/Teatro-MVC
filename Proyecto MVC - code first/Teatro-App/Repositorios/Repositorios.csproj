@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modelos\ContextConfig.cs" />
     <Compile Include="Modelos\Dominio\ContextConfig\EntidadBaseConfig.cs" />
     <Compile Include="Modelos\Dominio\ContextConfig\EventoConfig.cs" />
     <Compile Include="Modelos\Dominio\ContextConfig\InstrumentoConfig.cs" />
@@ -62,6 +63,10 @@
     <Compile Include="Modelos\Dominio\IntegranteInstrumentoPuestoEvento.cs" />
     <Compile Include="Modelos\Dominio\Orquesta.cs" />
     <Compile Include="Modelos\Dominio\Puesto.cs" />
+    <Compile Include="Modelos\Repositorios\IRepositorio.cs" />
+    <Compile Include="Modelos\Repositorios\IUnidadTrabajo.cs" />
+    <Compile Include="Modelos\Repositorios\Repositorio.cs" />
+    <Compile Include="Modelos\Repositorios\UnidadTrabajo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

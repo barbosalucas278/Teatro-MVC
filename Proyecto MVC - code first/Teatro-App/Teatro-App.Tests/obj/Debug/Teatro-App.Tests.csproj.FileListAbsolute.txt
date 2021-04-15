@@ -26,7 +26,6 @@ C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Tea
 C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Teatro-App.Tests\bin\Debug\Owin.dll
 C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Teatro-App.Tests\bin\Debug\System.Web.Http.dll
 C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Teatro-App.Tests\bin\Debug\EntityFramework.dll
-C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Teatro-App.Tests\bin\Debug\Repositorios.dll
 C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Teatro-App.Tests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
 C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Teatro-App.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.dll
 C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Teatro-App.Tests\bin\Debug\System.Web.Http.WebHost.dll
@@ -50,8 +49,6 @@ C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Tea
 C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Teatro-App.Tests\bin\Debug\Microsoft.Owin.Security.xml
 C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Teatro-App.Tests\bin\Debug\System.Web.Http.xml
 C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Teatro-App.Tests\bin\Debug\EntityFramework.xml
-C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Teatro-App.Tests\bin\Debug\Repositorios.pdb
-C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Teatro-App.Tests\bin\Debug\Repositorios.dll.config
 C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Teatro-App.Tests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Teatro-App.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.xml
 C:\Users\pocho\Desktop\CodaFirst Teatro\Proyecto MVC - code first\Teatro-App\Teatro-App.Tests\bin\Debug\System.Web.Http.WebHost.xml
