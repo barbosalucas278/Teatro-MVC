@@ -10,24 +10,61 @@ namespace Teatro_App
 {
     public class Repositorio<TEntity> : IRepositorio<TEntity> where TEntity : EntidadBase
     {
-        protected readonly DbContext Contexto;
+        protected readonly DbContext _Contexto;
         public Repositorio(DbContext contexto)
         {
-            Contexto = contexto;
+            _Contexto = contexto;
         }
+        /// <summary>
+        /// Trae todos los elementos TEntity que cumplan con que la MarcaUso y Activo son true asincrónicamente.
+        /// </summary>
+        /// <returns></returns>
+        public async Task<List<TEntity>> GetAll()
+        {
+            return await _Contexto.Set<TEntity>().Where(x => x.Activo && x.MarcaUso).ToListAsync();
+        }
+        /// <summary>
+        /// Si el usuario que modifica no es nulo o vacio agrega un nuevo elemento del tipo TEntity al contexto.
+        /// </summary>
+        /// <param name="entidad"></param>
+        /// <param name="usuario"></param>
         public void Add(TEntity entidad, string usuario)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(usuario))
+            {
+                throw new Exception("El usuario no puede ser nulo");
+            }
+            entidad.UsuarioModificacion = usuario;
+            _Contexto.Set<TEntity>().Add(entidad);
         }
-
-        public Task<List<TEntity>> Find(Expression<Func<TEntity, bool>> predicate)
+        /// <summary>
+        /// Busca una entidad mediante un predicado en el Where
+        /// </summary>
+        /// <param name="predicate">Criterio de bsuqueda</param>
+        /// <returns></returns>
+        public async Task<List<TEntity>> Find(Expression<Func<TEntity, bool>> predicate)
         {
-            throw new NotImplementedException();
+            return await _Contexto.Set<TEntity>().Where(predicate).ToListAsync();
         }
-
-        public Task<List<TEntity>> GetAll()
+        /// <summary>
+        /// Da de baja una entidad del contexto.
+        /// </summary>
+        /// <param name="entidad"></param>
+        /// <param name="usuario"></param>
+        public void Remove(TEntity entidad, string usuario)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(usuario))
+            {
+                throw new Exception("El usuario no puede ser nulo");
+            }
+            var resultadoBusqueda = _Contexto.Set<TEntity>().FindAsync(entidad).Result;
+            if(resultadoBusqueda != null)
+            {
+                resultadoBusqueda.UsuarioModificacion = usuario;
+                resultadoBusqueda.Activo = false;
+                resultadoBusqueda.FechaBaja = DateTime.Now;
+            }
+
         }
     }
 }
