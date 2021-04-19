@@ -15,15 +15,16 @@ namespace Teatro_App.Controllers
         }
         public ActionResult Index()
         {
-            var integranteNuevo = new Integrante
-            {
-                Nombre = "Lucas",
-                Apellido = "Barbosa",
-                Edad = 27,
-                Dni = "39485335",
-                Telefono = "1161336329"
-            };
-            _Ut.Integrantes.Add(integranteNuevo, "Lucas");
+            //var iipe = new IntegranteInstrumentoPuestoEvento
+            //{
+            //    IntegranteId = 21,
+            //    PuestoId = 5,
+            //    InstrumentoId = 14,
+            //    EventoId = 1,
+            //    Nombre = "no se que poner"
+            //};
+            //_Ut.IntegranteInstrumentoPuestoEventos.Add(iipe, "pepe");
+            var busqueda = _Ut.IntegranteInstrumentoPuestoEventos.GetIntegrante(21).Result;
             var resultado = _Ut.Complete().Result;
             if (resultado == 1)
             {

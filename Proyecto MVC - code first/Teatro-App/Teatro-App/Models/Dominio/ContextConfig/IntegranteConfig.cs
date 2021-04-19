@@ -11,7 +11,6 @@ namespace Teatro_App
         public IntegranteConfig()
         {
             ToTable("Integrante");
-            Property(i => i.Nombre).HasMaxLength(150).IsRequired();
             Property(i => i.Apellido).HasMaxLength(150).IsRequired();
             Property(i => i.Edad).IsRequired();
             Property(i => i.Telefono).HasMaxLength(20).IsRequired();

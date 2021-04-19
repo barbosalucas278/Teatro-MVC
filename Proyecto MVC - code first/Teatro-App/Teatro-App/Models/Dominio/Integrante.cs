@@ -12,7 +12,6 @@ namespace Teatro_App
         {
             IntegranteInstrumentoPuestoEventos = new HashSet<IntegranteInstrumentoPuestoEvento>();
         }
-        public string Nombre { get; set; }
         public string Apellido { get; set; }
         public int Edad { get; set; }
         public string Telefono { get; set; }

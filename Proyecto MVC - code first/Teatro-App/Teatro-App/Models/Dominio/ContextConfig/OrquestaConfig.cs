@@ -10,9 +10,6 @@ namespace Teatro_App
     {
         public OrquestaConfig()
         {
-            Property(o => o.Nombre)
-                .IsRequired()
-                .HasMaxLength(150);
 
             Property(o => o.Localidad)
                 .IsRequired()

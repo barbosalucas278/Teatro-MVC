@@ -194,6 +194,14 @@
     <Compile Include="Migrations\202104151913332_modificacionFechas.Designer.cs">
       <DependentUpon>202104151913332_modificacionFechas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104191938285_Actualizacion.cs" />
+    <Compile Include="Migrations\202104191938285_Actualizacion.Designer.cs">
+      <DependentUpon>202104191938285_Actualizacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104191955577_Actualizacion.2.cs" />
+    <Compile Include="Migrations\202104191955577_Actualizacion.2.Designer.cs">
+      <DependentUpon>202104191955577_Actualizacion.2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ContextConfig.cs" />
@@ -215,7 +223,19 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Repositorios\IRepositorio.cs" />
     <Compile Include="Models\Repositorios\IUnidadTrabajo.cs" />
+    <Compile Include="Models\Repositorios\RepositoriosEntidades\EventoRepositorio.cs" />
+    <Compile Include="Models\Repositorios\RepositoriosEntidades\IEventoRepositorio.cs" />
     <Compile Include="Models\Repositorios\Repositorio.cs" />
+    <Compile Include="Models\Repositorios\RepositoriosEntidades\IInstrumentoRepositorio.cs" />
+    <Compile Include="Models\Repositorios\RepositoriosEntidades\IIntegranteInstrumentoPuestoEventoRepositorio.cs" />
+    <Compile Include="Models\Repositorios\RepositoriosEntidades\IIntegranteRepositorio.cs" />
+    <Compile Include="Models\Repositorios\RepositoriosEntidades\InstrumentoRepositorio.cs" />
+    <Compile Include="Models\Repositorios\RepositoriosEntidades\IntegranteInstrumentoPuestoEventoRepositorio.cs" />
+    <Compile Include="Models\Repositorios\RepositoriosEntidades\IntegranteRepositorio.cs" />
+    <Compile Include="Models\Repositorios\RepositoriosEntidades\IOrquestaRepositorio.cs" />
+    <Compile Include="Models\Repositorios\RepositoriosEntidades\IPuestoRepositorio.cs" />
+    <Compile Include="Models\Repositorios\RepositoriosEntidades\OrquestaRepositorio.cs" />
+    <Compile Include="Models\Repositorios\RepositoriosEntidades\PuestoRepositorio.cs" />
     <Compile Include="Models\Repositorios\UnidadTrabajo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -302,6 +322,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104151913332_modificacionFechas.resx">
       <DependentUpon>202104151913332_modificacionFechas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104191938285_Actualizacion.resx">
+      <DependentUpon>202104191938285_Actualizacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104191955577_Actualizacion.2.resx">
+      <DependentUpon>202104191955577_Actualizacion.2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

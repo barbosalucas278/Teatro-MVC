@@ -12,7 +12,6 @@ namespace Teatro_App
         {
             IntegranteInstrumentoPuestoEventos = new HashSet<IntegranteInstrumentoPuestoEvento>();
         }
-        public string Nombre { get; set; }
         public virtual ICollection<IntegranteInstrumentoPuestoEvento> IntegranteInstrumentoPuestoEventos { get; set; }
     }
 }

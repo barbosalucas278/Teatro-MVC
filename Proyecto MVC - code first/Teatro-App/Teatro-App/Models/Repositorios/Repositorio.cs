@@ -42,9 +42,12 @@ namespace Teatro_App
         /// </summary>
         /// <param name="predicate">Criterio de bsuqueda</param>
         /// <returns></returns>
-        public async Task<List<TEntity>> Find(Expression<Func<TEntity, bool>> predicate)
+        public Task<List<TEntity>> Find(Expression<Func<TEntity, bool>> predicate)
         {
-            return await _Contexto.Set<TEntity>().Where(predicate).ToListAsync();
+            return _Contexto.Set<TEntity>()
+                .Where(predicate)
+                .Where(t => t.Activo && t.MarcaUso)
+                .ToListAsync();
         }
         /// <summary>
         /// Da de baja una entidad del contexto.
@@ -58,7 +61,7 @@ namespace Teatro_App
                 throw new Exception("El usuario no puede ser nulo");
             }
             var resultadoBusqueda = _Contexto.Set<TEntity>().FindAsync(entidad).Result;
-            if(resultadoBusqueda != null)
+            if (resultadoBusqueda != null)
             {
                 resultadoBusqueda.UsuarioModificacion = usuario;
                 resultadoBusqueda.Activo = false;
