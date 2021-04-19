@@ -12,7 +12,6 @@ namespace Teatro_App
         {
             Eventos = new HashSet<Evento>();
         }
-        public string Nombre { get; set; }
         public string Localidad { get; set; }
         public virtual ICollection<Evento> Eventos { get; set; }
     }

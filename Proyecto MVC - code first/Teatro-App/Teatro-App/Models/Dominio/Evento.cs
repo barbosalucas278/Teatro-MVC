@@ -13,7 +13,6 @@ namespace Teatro_App
             IntegranteInstrumentoPuestoEventos = new HashSet<IntegranteInstrumentoPuestoEvento>();
         }
         public int OrquestaId { get; set; }
-        public string Obra { get; set; }
         public DateTime Dia { get; set; }
 
         //Relaciones

@@ -11,15 +11,11 @@ namespace Teatro_App
         public EventoConfig()
         {
             Property(e => e.OrquestaId)
-                .IsRequired();
-
-            Property(e => e.Obra)
-                .IsRequired()
-                .HasMaxLength(200);
+                .IsRequired();            
 
             Property(e => e.Dia)
                 .IsRequired()
-                .HasColumnName("datetime2");
+                .HasColumnType("datetime2");
 
             //Relaciones
 

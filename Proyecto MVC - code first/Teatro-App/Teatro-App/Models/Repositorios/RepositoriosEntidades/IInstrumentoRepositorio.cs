@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Teatro_App
+namespace Teatro_App.Models.Repositorios.RepositoriosEntidades
 {
-    public class PuestoConfig : EntidadBaseConfig<Puesto>
+    public interface IInstrumentoRepositorio
     {
-        public PuestoConfig()
-        {
-        }
     }
 }

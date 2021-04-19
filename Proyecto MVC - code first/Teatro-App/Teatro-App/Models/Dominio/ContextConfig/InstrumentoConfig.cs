@@ -10,9 +10,6 @@ namespace Teatro_App
     {
         public InstrumentoConfig()
         {
-            Property(i => i.Nombre)
-                .IsRequired()
-                .HasMaxLength(100);
         }
     }
 }
